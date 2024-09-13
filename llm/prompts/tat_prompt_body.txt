@@ -1,0 +1,26 @@
+Please organize the results in the following table:
+| step | output |
+| 1 | {question_type} |
+| 2 | {evidence} |
+| 3 | {equation} |
+| 4 | {answer} |
+| 5 | {scale} |
+Finally, present the final answer in the format: "The answer is: {answer} #### and its corresponding scale is: {scale}"
+
+### Table
+{table}
+
+### Text
+{text}
+
+### Question
+{question}
+
+### Response
+| step | output |
+| 1 | {gold_question_type} |
+| 2 | {gold_evidence} |
+| 3 | {gold_equation} |
+| 4 | {gold_answer} |
+| 5 | {gold_scale} |
+The answer is: {gold_answer} #### and its corresponding scale is: {gold_scale}

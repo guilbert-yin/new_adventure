@@ -1,0 +1,24 @@
+Please organize the results in the following table:
+| step | output |
+| 1 | {question_type} |
+| 2 | {evidence} |
+| 3 | {equation} |
+| 4 | {answer} |
+Finally, present the final answer in the format: "The answer is: {answer} ####"
+
+### Table Description
+{table}
+
+### Text
+{text}
+
+### Question
+{question}
+
+### Response
+| step | output |
+| 1 | {gold_question_type} |
+| 2 | {gold_evidence} |
+| 3 | {gold_equation} |
+| 4 | {gold_answer} |
+The answer is: {gold_answer} ####
