@@ -246,7 +246,8 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
         response_index = final_prompt.find("### Response")
         prompt_prefix = final_prompt.split("### Response")[0] + "### Response"
         response_str = final_prompt[len("### Response") + response_index:]
-        print(prompt_prefix)
+        # print(prompt_prefix)
+        # print(final_prompt)
 
         dout = {"quid":quid, "prompt_full": final_prompt, "prompt_prefix":prompt_prefix, "program": program, "answer": str(answer), "response": response_str.replace("####", "")}
         # print(final_prompt)
