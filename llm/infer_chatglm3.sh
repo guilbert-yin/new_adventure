@@ -1,0 +1,1 @@
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --lora-path /home/gt/code/git/ChatGLM3/finetune_basemodel_demo/basemodel-tatqa-bs4-20240103-213604-1e-4/checkpoint-15000/pytorch_model.pt

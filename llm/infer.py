@@ -17,6 +17,13 @@ import json
 import transformers
 transformers.logging.set_verbosity_info()
 
+
+max_memory = f'{int(torch.cuda.mem_get_info()[0]/1024**3)-1}GB'
+n_gpus = torch.cuda.device_count()
+max_memory = {i: max_memory for i in range(n_gpus)}
+
+
+
 #model_save_path = '/home/gt/code/git/llama2/tatqa_train_chatmodel_full_output'
 # model_ckpt_save_path = '/home/gt/code/git/llama2/tatqa_train_full_output'
 model_ckpt_save_path = None
@@ -26,7 +33,10 @@ model_ckpt_save_path = None
 
 
 # model_id = "/exdata/huggingface/Llama-2-7b-hf"
-model_id = "/exdata/huggingface/Llama-2-7b-chat-hf"
+# model_id = "/exdata/huggingface/Llama-2-7b-chat-hf"
+model_id = "/root/autodl-fs/models/Llama-2-7b-chat-hf"
+
+
 max_length = 512
 device_map = "cuda:0"
 batch_size = 8
@@ -70,8 +80,11 @@ def init_llama_model():
         quantization_config=bnb_config,
         use_cache=True,
         device_map='auto',
+        max_memory=max_memory,
         # attn_implementation="eager",
-        use_flash_attention_2=True,
+        attn_implementation="flash_attention_2",
+        # use_flash_attention_2=True,
+        # trust_remote_code=True, # minicpm需要打开这个配置
     )
 
 
@@ -109,10 +122,14 @@ def infer(fn, tokenizer, model):
                     input_ids=inputs.input_ids,
                     generation_config=generation_config,
                     #return_dict_in_generate=True,
-                    max_length=inputs["input_ids"].shape[-1] + 10,
-                    #max_new_tokens=64,
+                    # max_length=inputs["input_ids"].shape[-1] + 10,
+                    max_new_tokens=64,
                     )
+            print("==========")
             print('Answer: ', tokenizer.decode(generation_output[0][inputs["input_ids"].shape[-1]:]))
+            torch.cuda.empty_cache()
+            print("==========")
+            
 
     f.close()
 
