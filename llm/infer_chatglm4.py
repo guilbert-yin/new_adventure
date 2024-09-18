@@ -21,7 +21,6 @@ parser.add_argument("--lora-dropout", type=float, default=0.1, help="LoRA dropou
 parser.add_argument("--input-fn", type=str, default="mht_dataset_prompt_dev_top30.jsonl", help="Input file name")
 parser.add_argument("--output-fn", type=str, default="glm3_output.jsonl", help="Output file name")
 parser.add_argument("--infer-num", type=int, default=1044, help="infer dev set num")
-parser.add_argument("--use-chat", action="store_true", default=False, help="use model chat interface")
 
 args = parser.parse_args()
 
@@ -29,7 +28,7 @@ if args.tokenizer is None:
     args.tokenizer = args.model
 
 # Model and Tokenizer Configuration
-tokenizer = AutoTokenizer.from_pretrained(args.tokenizer, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(args.tokenizer, trust_remote_code=True, encode_special_tokens=True)
 model = AutoModel.from_pretrained(args.model, load_in_8bit=False, trust_remote_code=True, device_map="auto").to(
     args.device)
 
@@ -85,18 +84,20 @@ def infer(fn, tokenizer, model, output_fn, infer_num):
             js = json.loads(l)
             prompt = js['prompt_prefix']
 
+            inputs = tokenizer.apply_chat_template([{"role": "user", "content": prompt}],
+                                       add_generation_prompt=True,
+                                       tokenize=True,
+                                       return_tensors="pt",
+                                       return_dict=True
+                                       )
 
-            if args.use_chat:
-                # use chat
-                res, history = model.chat(tokenizer, prompt, history=[])
-            else:
+            inputs = inputs.to(args.device)
 
-                inputs = tokenizer(prompt, return_tensors="pt").to(args.device)
+            gen_kwargs = {"max_length": 2500, "do_sample": True, "top_k": 1}
+            response = model.generate(**inputs, **gen_kwargs)
 
-                response = model.generate(input_ids=inputs["input_ids"],max_length=inputs["input_ids"].shape[-1] + args.max_new_tokens)
-
-                response = response[0, inputs["input_ids"].shape[-1]:]
-                res = tokenizer.decode(response, skip_special_tokens=True)
+            response = response[:, inputs["input_ids"].shape[1]:]
+            res = tokenizer.decode(response[0], skip_special_tokens=True)
 
 
             dout = {"res":res, "quid": js["quid"]}
@@ -124,4 +125,4 @@ infer_num = args.infer_num
 infer(input_file_name, tokenizer, model, output_file_name, infer_num)
 
 # cmd:
-# python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b --input-fn mht_dataset_prompt_dev_top30.jsonl --output-fn chatglm3_output.jsonl
+# python3 llm/infer_chatglm4.py --model /exdata/huggingface/glm-4-9b-chat --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn chatglm4_table_raw_prompt_refine_output.jsonl --infer-num 50

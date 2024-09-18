@@ -7,7 +7,7 @@ Please organize the results in the following table:
 | 4 | {answer} |
 Finally, it is necessary to strictly generate the program and the final answer in the following template: "The program is: <Prog>{program}</Prog>, and the answer is: <Ans>{answer}</Ans>". A complete example is as follows: "The program is: <Prog>add(1,2), subtract(#0,3)</Prog>, and the answer is: <Ans>0</Ans>".
 
-### Table Description
+### Table
 {table}
 
 ### Text

@@ -50,6 +50,7 @@ def evaluation_prediction_result(predict_json_in, gold_json_in, test_file_json_i
         response = response.replace("## Answer:","")
         response = response.replace("\n The answer is:","")
         response = response.replace("The answer is:","")
+        response = response.replace(":","")
 
         prediction_dict[js_l['quid']] = str(response)
 
@@ -131,3 +132,16 @@ if __name__ == '__main__':
     gold_file = sys.argv[2]
 
     evaluation_prediction_result(predict_file, gold_file, None, None)
+
+
+
+
+
+# 240915
+# Total Exact Match Score: 0.0603448275862069, F1 Score: 0.07159961685823754
+# ================================
+# Span Exact Match Score: 0.29207920792079206, F1 Score: 0.3428217821782179
+# Span In Total Exact Match Score: 0.05651340996168582, F1 Score: 0.06633141762452109
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.004750593824228029, F1 Score: 0.006532066508313539
+# Arithmetic In Total Exact Match Score: 0.0038314176245210726, F1 Score: 0.005268199233716475

@@ -1,0 +1,8 @@
+Below is an instruction that describes a question answering task in the finance domain, paired with an input table and its relevant text that provide further context. The given question is relevant to the table and text. Generate an appropriate answer to the given question.
+
+### Instruction
+Given a list of table descriptions and a list of texts in the following, answer the question posed using the following four-step process:
+1. Step 1: Predict the type of question being asked. Store this prediction in the variable '{question_type}'. The value of '{question_type}' can be one of the following:'span_selection', or 'arithmetic'.
+2. Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. Store these pieces of evidence in the variable '{evidence}'. If there are multiple pieces of evidence, separate them using the '##' symbol.
+3. Step 3: iif the '{question_type}' is 'Arithmetic', formulate an equation using values stored in '{evidence}'. Store this equation in the variable '{equation}'. For all other question types, set the value of {equation} to 'N.A.'.
+4. Step 4: Predict or calculate the answer based on the question type, evidence and program. Store it in the variable '{answer}'. If there are multiple values, separate them using the '#' symbol.
