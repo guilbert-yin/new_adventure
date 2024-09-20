@@ -1,0 +1,79 @@
+
+Please organize the results in the following table:
+| step | output |
+| 1 | {question_type} |
+| 2 | {evidence} |
+| 3 | {program} |
+| 4 | {answer} |
+Finally, it is necessary to strictly generate response containing the program and the final answer in the following template: 'The program is: <Prog>{program}</Prog>, and the answer is: <Ans>{answer}</Ans>'. If the '{question_type}' is 'arithmetic', the response example is as follows: 'The program is: <Prog>add(1,2), subtract(#0,3)</Prog>, and the answer is: <Ans>0</Ans>'. If the '{question_type}' is 'span_selection', the response example is as follows: 'The answer is: <Ans>0</Ans>'.
+
+Next, I will provide you with a complete example between '#### Start of Example' and '#### End of Example', followed by a real question and relevant background information after '#### End of Example'. You need to give a response according to the format requirements in the example based on the real question.
+
+#### Start of Example
+### Table
+## Table 0:
+|---|2008|2007 -1|
+|:---:|:---:|:---:|
+|Deferred tax liabilities relating to:|---|---|
+|Difference between book and tax basis of property|$-1,257.9|$-544.5|
+
+## Table 1:
+|---|2008|2007|2006|
+|:---:|:---:|:---:|:---:|
+|Collection:|---|---|---|
+|Residential|$966.0|$802.1|$758.3|
+
+## Table 2:
+|---|---|---|Notional Amount|---|
+|:---:|:---:|:---:|:---:|:---:|
+|---|---|---|(in Gallons|Contract Price|
+|Inception Date|Commencement Date|Termination Date|Per Month)|per Gallon|
+|September 22, 2008|January 1, 2009|December 31, 2011|150000|$4.1600-4.1700|
+
+## Table 3:
+|---|2012|2011|2010|
+|:---:|:---:|:---:|:---:|
+|Current:|---|---|---|
+|Federal|$228.7|$201.7|$253.9|
+
+## Table 4:
+|---|2012|2011|2010|
+|:---:|:---:|:---:|:---:|
+|Balance at beginning of year|$48.1|$50.9|$55.2|
+|Additions charged to expense|29.7|21.0|23.6|
+|Accounts written-off|-32.5|-23.8|-27.9|
+
+
+### Text
+REPUBLIC SERVICES, INC.  AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS The components of the net deferred income tax asset and liability at December 31, 2008 and 2007 are as follows (in millions).
+
+### Question
+what was the percentage change in the additions charged to expense from 2011 to 2012 as part of the allowance for doubtful accounts
+
+### Response
+| step | output |
+| 1 | arithmetic |
+| 2 | 29.7 ## 21.0 ## 21.0 |
+| 3 | subtract(29.7,21.0), divide(#0,21.0) |
+| 4 | 0.41429 |
+The program is: <Prog>subtract(29.7,21.0), divide(#0,21.0)</Prog>, and the answer is: <Ans>0.41429</Ans>
+#### End of Example
+
+This is the end of the example section, and the following is the real scenario and related question:
+
+### Text
+{text}
+
+### Table
+{table}
+
+### Question
+{question}
+
+### Response
+| step | output |
+| 1 | {gold_question_type} |
+| 2 | {gold_evidence} |
+| 3 | {gold_program} |
+| 4 | {gold_answer} |
+The program is: <Prog>{gold_program}</Prog>, and the answer is: <Ans>{gold_answer}</Ans>

@@ -11,3 +11,9 @@ python3 llm/infer_llama2.py --model /exdata/huggingface/Llama-2-7b-chat-hf --inp
 
 # llama2
 python3 llm/infer_llama2.py --model /exdata/huggingface/Llama-2-7b-hf --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn llama2_table_raw_prompt_refine_output.jsonl --infer-num 50 --use-raw-prompt
+
+
+
+# llama3
+python3 llm/infer_llama2.py --model /exdata/huggingface/tmp/Meta-Llama-3-8B-Instruct --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn llama3-chat_table_raw_prompt_refine_output.jsonl --infer-num 50 --use-raw-prompt
+

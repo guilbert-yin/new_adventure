@@ -317,7 +317,7 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
         prompt_prefix = final_prompt.split("### Response")[0] + "### Response"
         response_str = final_prompt[len("### Response") + response_index:]
         # print(prompt_prefix)
-        print(final_prompt)
+        # print(final_prompt)
 
         dout = {"quid":quid, "prompt_full": final_prompt, "prompt_prefix":prompt_prefix, "program": program, "answer": str(answer), "response": response_str.replace("####", "")}
         # print(final_prompt)
@@ -335,14 +335,22 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
 
     return final_prompt_list
 
+
+# cmd:
+# python3 llm/data_process_mht_table_raw.py dev llm/prompts/table_raw/example1
+
+
 if __name__ == "__main__":
 
     mode = sys.argv[1]
+    parent_dir = sys.argv[2]
+
+    # parent_dir = llm/prompts/table_raw
 
     fout = open(f'mht_dataset_table_raw_prompt_{mode}_top30.jsonl','w')
 
-    final_prompt_list = construct_the_final_prompt("llm/prompts/table_raw/mht_prompt_header.txt", 
-                               "llm/prompts/table_raw/mht_prompt_body.txt",
+    final_prompt_list = construct_the_final_prompt(f"{parent_dir}/mht_prompt_header.txt", 
+                               f"{parent_dir}/mht_prompt_body.txt",
                                f'llm/dataset/mht/combine_reason_input_{mode}_top30.json')
     
 

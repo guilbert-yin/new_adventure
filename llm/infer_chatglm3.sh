@@ -12,8 +12,20 @@ python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b --input-f
 python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn chatglm3_table_raw_prompt_refine_output.jsonl --infer-num 50
 
 # chatglm3-base
-python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_refine_output.jsonl --infer-num 50 --user-chat
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_refine_output.jsonl --infer-num 50 --use-chat
 
 
 # use model chat interface
 python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn chatglm3-base_chat_table_raw_prompt_refine_output.jsonl --infer-num 50 --use-chat
+
+
+
+
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_example1_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_example1_refine_output.jsonl --infer-num 50
+
+
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b --input-fn mht_dataset_table_raw_prompt_example1_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_example1_refine_output.jsonl --infer-num 50
+
+
+
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_example1_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_example1_refine_output.jsonl --infer-num 50

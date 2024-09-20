@@ -177,7 +177,7 @@ def infer(fn, tokenizer, model, output_fn, infer_num=1044):
 
 
                 inputs = tokenizer(model_user_template, max_length=2048, truncation=True, return_tensors="pt")
-                
+
             # inputs = tokenizer(prompt, return_tensors="pt")
             generation_output = model.generate(
                     input_ids=inputs.input_ids,
@@ -193,6 +193,7 @@ def infer(fn, tokenizer, model, output_fn, infer_num=1044):
 
             dout = {"res":res, "quid": js["quid"]}
             fout.write(json.dumps(dout)+"\n")
+            fout.flush()
 
             torch.cuda.empty_cache()
             print("==========")
