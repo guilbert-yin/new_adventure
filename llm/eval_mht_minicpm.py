@@ -1,6 +1,7 @@
 import json, os, re, sys
 from mht_utils.eval_utils import *
-import math 
+import math
+import mht_pre_order as mht_pre_order
 
 def str_to_num(text):
     text = text.replace("$","")
@@ -136,6 +137,171 @@ def evaluation_prediction_result_reverse(predict_json_in, gold_json_in, test_fil
     return exact_match_score, f1_score
 
 
+all_ops = ["add", "subtract", "multiply", "divide", "exp"]
+
+
+def eval_program(program):
+    '''
+    calculate the numerical results of the program
+    '''
+
+    invalid_flag = 0
+    this_res = "n/a"
+
+    try:
+        # program = program[:-1]  # remove EOF
+        # check structure
+        for ind, token in enumerate(program):
+            if ind % 4 == 0:
+                if token.strip("(") not in all_ops:
+                    return 1, "n/a"
+            if (ind + 1) % 4 == 0:
+                if token != ")":
+                    return 1, "n/a"
+
+        program = "|".join(program)
+        steps = program.split(")")[:-1]
+
+        res_dict = {}
+
+        for ind, step in enumerate(steps):
+            step = step.strip()
+
+            if len(step.split("(")) > 2:
+                invalid_flag = 1
+                break
+            op = step.split("(")[0].strip("|").strip()
+            args = step.split("(")[1].strip("|").strip()
+
+            arg1 = args.split("|")[0].strip()
+            arg2 = args.split("|")[1].strip()
+
+            if "#" in arg1:
+                arg1 = res_dict[int(arg1.replace("#", ""))]
+            else:
+                arg1 = str_to_num(arg1)
+                if arg1 == "n/a":
+                    invalid_flag = 1
+                    break
+
+            if "#" in arg2:
+                arg2 = res_dict[int(arg2.replace("#", ""))]
+            else:
+                arg2 = str_to_num(arg2)
+                if arg2 == "n/a":
+                    invalid_flag = 1
+                    break
+
+            if op == "add":
+                this_res = arg1 + arg2
+            elif op == "subtract":
+                this_res = arg1 - arg2
+            elif op == "multiply":
+                this_res = arg1 * arg2
+            elif op == "divide":
+                this_res = arg1 / arg2
+            elif op == "exp":
+                this_res = arg1 ** arg2
+
+            res_dict[ind] = this_res
+
+        if this_res != "n/a":
+            this_res = round(this_res, 5)
+
+    except:
+        invalid_flag = 1
+
+    return invalid_flag, this_res
+
+
+# def evaluate_program_result(pred_prog, gold_prog):
+#     '''
+#     execution acc
+#     execution acc = exact match = f1
+#     '''
+#     invalid_flag, exe_res = eval_program(pred_prog)
+
+#     gold = program_tokenization(gold_prog)
+#     invalid_flag, exe_gold_res = eval_program(gold)
+
+#     if invalid_flag:
+#         print(gold)
+#     if exe_res == exe_gold_res:
+#         exe_acc = 1
+#     else:
+#         exe_acc = 0
+
+#     return exe_acc, exe_acc
+
+
+# 形式 1:
+# deferred tax assets and liabilities are not disclosed in the financial statements.
+### Question
+# What is the percentage change in the unrecognized tax benefits from 2015 to 2016?
+# ### Response
+# | step | output |
+# | 1 | arithmetic |
+# | 2 | 88 ## 17 |
+# | 3 | subtract(88,17), divide(#0,17) |
+# | 4 | 4.70588 |
+# The program is: <Prog>subtract(88,17),
+
+
+# 形式 2:
+# operating expenses and unexpected increases in the cost of capital could result in a significant reduction in the Corporation\u2019s cash flow and earnings.
+### Question
+# What is the percentage change in the sales and other operating revenues from 2010 to 2011?
+# ### Response
+# | step | output |
+# | 1 | arithmetic |
+# | 2 | 2453 ## 2750 |
+# | 3 | subtract(2453,2750), divide(#0,2750) |
+# | 4 | -0.1
+
+
+
+def response_cleaner_strategy(response):
+    reg3 = r'.*\|.*3.*\|(.*)\|.*'
+    reg4 = r'.*\|.*4.*\|(.*)\|.*'
+
+    p4 = re.compile(reg4)
+    p3 = re.compile(reg3)
+
+    # 先判断如果p4命中则直接比对
+    m4 = p4.search(response)
+    if m4:
+        res = m4.group(1)
+        # print("---------")
+        # print(res)
+        # print(response)
+        # print("=========")
+        return res
+    
+
+    # print("prepare m3")
+    # print(response)
+    
+    m3 = p3.search(response)
+    if m3:
+        program = m3.group(1)
+        # print(program)
+        # 执行程序
+        try:
+            l = mht_pre_order.parse_program_str(program)
+            prog_prefix_expr = " ".join(l)
+            print(prog_prefix_expr)
+
+            ans = mht_pre_order.mht_program_expr_eval(prog_prefix_expr)
+            return ans
+        except:
+            return response
+    
+        
+    return response
+
+
+
+
 
 def evaluation_prediction_result(predict_json_in, gold_json_in, test_file_json_in, output_dir):
     exact_match_total, f1_total = 0, 0
@@ -148,12 +314,14 @@ def evaluation_prediction_result(predict_json_in, gold_json_in, test_file_json_i
         response = js_l['res']
 
         # clean data
-        response = response.replace(": Answer:","")
-        response = response.replace(": The answer is:","")
-        response = response.replace("## Answer:","")
-        response = response.replace("\n The answer is:","")
-        response = response.replace("The answer is:","")
-        response = response.replace(":","")
+        # response = response.replace(": Answer:","")
+        # response = response.replace(": The answer is:","")
+        # response = response.replace("## Answer:","")
+        # response = response.replace("\n The answer is:","")
+        # response = response.replace("The answer is:","")
+        # response = response.replace(":","")
+
+        response = response_cleaner_strategy(response)
 
         prediction_dict[js_l['quid']] = str(response)
 
@@ -244,7 +412,7 @@ if __name__ == '__main__':
 
 
 
-# 240915 mht_chatglm3_dev_top30_out
+# 240915
 # Total Exact Match Score: 0.0603448275862069, F1 Score: 0.07159961685823754
 # ================================
 # Span Exact Match Score: 0.29207920792079206, F1 Score: 0.3428217821782179

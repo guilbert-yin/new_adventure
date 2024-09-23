@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import sys
+import re
 
 def to_df(html_table):
     soup = BeautifulSoup(html_table, 'html.parser')
@@ -169,6 +170,10 @@ def concat_evidence(paras, tables, text_evidence, table_evidence):
 #     "question_type": "span_selection"
 # }
 
+prompt_prefix_len_list = []
+response_len_list = []
+
+
 def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
     pf_header = get_prompt_template(fn_header)
     pf_body = get_prompt_template(fn_body)
@@ -243,11 +248,34 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
 
         final_prompt = prompt_header + "\n" + prompt_body_str
 
-        response_index = final_prompt.find("### Response")
-        prompt_prefix = final_prompt.split("### Response")[0] + "### Response"
-        response_str = final_prompt[len("### Response") + response_index:]
-        print(prompt_prefix)
+        
+        
+        # response_index = final_prompt.find("### Response")
+        # prompt_prefix = final_prompt.split("### Response")[0] + "### Response"
+        # response_str = final_prompt[len("### Response") + response_index:]
+
+
+        # 处理多个 ### Response 的情况
+        response_index_list = find_all_indexes("### Response", final_prompt)
+        the_last_response_index = response_index_list[len(response_index_list)-1]
+
+        total_response_list = final_prompt.split("### Response")
+
+        prompt_prefix = ""
+
+        for reponse_part in total_response_list[:len(total_response_list)-1]:
+            prompt_prefix += reponse_part + "### Response"
+    
+        response_str = final_prompt[len("### Response") + the_last_response_index:]
+
+        prompt_prefix_len_list.append(len(prompt_prefix.split(" ")))
+        response_len_list.append(len(response_str.split(" ")))
+
+        # print(prompt_prefix)
         # print(final_prompt)
+
+
+
 
         dout = {"quid":quid, "prompt_full": final_prompt, "prompt_prefix":prompt_prefix, "program": program, "answer": str(answer), "response": response_str.replace("####", "")}
         # print(final_prompt)
@@ -265,11 +293,21 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
 
     return final_prompt_list
 
+
+
+def find_all_indexes(pattern, string):
+    # 使用re.finditer获取所有匹配的迭代器
+    matches = re.finditer(pattern, string)
+    # 将匹配的span转换为开始索引并收集
+    return [match.span()[0] for match in matches]
+
+
+
 if __name__ == "__main__":
 
     mode = sys.argv[1]
 
-    fout = open(f'mht_dataset_prompt_{mode}_top30.jsonl','w')
+    fout = open(f'mht_dataset_table_str_prompt_{mode}_top30.jsonl','w')
     # pf_header = get_prompt_template("llm/prompts/tat_prompt_header.txt")
     # pf_body = get_prompt_template("llm/prompts/tat_prompt_body.txt")
 
@@ -277,6 +315,20 @@ if __name__ == "__main__":
                                "llm/prompts/table_str/mht_prompt_body.txt",
                                f'llm/dataset/mht/combine_reason_input_{mode}_top30.json')
     
+
+    max_prompt_len = max(prompt_prefix_len_list)
+    avg_prompt_len = sum(prompt_prefix_len_list) / len(prompt_prefix_len_list)
+
+    max_response_len = max(response_len_list)
+    avg_response_len = sum(response_len_list) / len(response_len_list)
+
+
+    print(f"max_prompt_len : {max_prompt_len}")
+    print(f"avg_prompt_len : {avg_prompt_len}")
+    print(f"max_response_len : {max_response_len}")
+    print(f"avg_response_len : {avg_response_len}")
+
+
     for dout in final_prompt_list:
         fout.write(json.dumps(dout) + "\n")
     

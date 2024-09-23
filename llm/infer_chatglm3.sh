@@ -29,3 +29,7 @@ python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b --input-f
 
 
 python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_example1_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_example1_refine_output.jsonl --infer-num 50
+
+
+
+python3 llm/infer_chatglm3.py --model /home/gt/huggingface/chatglm3-6b-base --input-fn mht_dataset_table_raw_prompt_example3_dev_top30.jsonl --output-fn chatglm3-base_table_raw_prompt_example3_refine_output_full.jsonl --infer-num 1044 --max-new-tokens 512

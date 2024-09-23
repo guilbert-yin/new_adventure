@@ -50,9 +50,9 @@ def infer(fn, tokenizer, model, output_fn, infer_num):
                 model_inputs,
                 attention_mask=attention_mask,
                 pad_token_id=tokenizer.eos_token_id,
-                max_new_tokens=128,
+                max_new_tokens=256, # 优先保证这里长度足够
                 top_p=0.7,
-                temperature=0.2
+                temperature=0.7
             )
 
             output_token_ids = [
