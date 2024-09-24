@@ -10,6 +10,7 @@ parser.add_argument("--model", type=str, default="/exdata/huggingface/models--op
 parser.add_argument("--input-fn", type=str, default="mht_dataset_prompt_dev_top30.jsonl", help="Input file name")
 parser.add_argument("--output-fn", type=str, default="minicpm_output.jsonl", help="Output file name")
 parser.add_argument("--infer-num", type=int, default=1044, help="infer dev set num")
+parser.add_argument("--max-new-tokens", type=int, default=128, help="Maximum new tokens for generation")
 
 args = parser.parse_args()
 
@@ -20,7 +21,7 @@ def init_llama_model(model_id, device):
     return tokenizer, model
 
 
-def infer(fn, tokenizer, model, output_fn, infer_num):
+def infer(fn, tokenizer, model, output_fn, infer_num, max_new_tokens=256):
     f = open(fn,"r")
     lines = []
     #with torch.backends.cuda.sdp_kernel(enable_flash=True, enable_math=False, enable_mem_efficient=False):
@@ -50,7 +51,7 @@ def infer(fn, tokenizer, model, output_fn, infer_num):
                 model_inputs,
                 attention_mask=attention_mask,
                 pad_token_id=tokenizer.eos_token_id,
-                max_new_tokens=256, # 优先保证这里长度足够
+                max_new_tokens=max_new_tokens, # 优先保证这里长度足够
                 top_p=0.7,
                 temperature=0.7
             )
@@ -85,7 +86,7 @@ def infer(fn, tokenizer, model, output_fn, infer_num):
 
 
 # cmd
-# python3 llm/infer_minicpm.py --model /exdata/huggingface/models--openbmb--MiniCPM3-4B --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn minicpm_table_raw_prompt_refine_output.jsonl --infer-num 50
+# python3 llm/infer_minicpm.py --model /exdata/huggingface/models--openbmb--MiniCPM3-4B --input-fn mht_dataset_table_raw_prompt_dev_top30.jsonl --output-fn minicpm_table_raw_prompt_refine_output.jsonl --infer-num 50 --max-new-tokens 512
 
 
 
@@ -97,6 +98,7 @@ if __name__ == "__main__":
     output_fn = args.output_fn
     input_fn = args.input_fn
     infer_num = args.infer_num
+    max_new_tokens = args.max_new_tokens
 
     tokenizer, model = init_llama_model(model_id, device)
-    infer(input_fn, tokenizer, model, output_fn, infer_num)
+    infer(input_fn, tokenizer, model, output_fn, infer_num, max_new_tokens)
