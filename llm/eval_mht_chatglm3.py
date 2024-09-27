@@ -316,12 +316,12 @@ def evaluation_prediction_result(predict_json_in, gold_json_in, test_file_json_i
         response = js_l['res']
 
         # clean data
-        # response = response.replace(": Answer:","")
-        # response = response.replace(": The answer is:","")
-        # response = response.replace("## Answer:","")
-        # response = response.replace("\n The answer is:","")
-        # response = response.replace("The answer is:","")
-        # response = response.replace(":","")
+        response = response.replace(": Answer:","")
+        response = response.replace(": The answer is:","")
+        response = response.replace("## Answer:","")
+        response = response.replace("\n The answer is:","")
+        response = response.replace("The answer is:","")
+        response = response.replace(":","")
 
         response = response_cleaner_strategy(response)
 
@@ -414,7 +414,7 @@ if __name__ == '__main__':
 
 
 
-# 240915
+# 240915 chatglm3 initial
 # Total Exact Match Score: 0.0603448275862069, F1 Score: 0.07159961685823754
 # ================================
 # Span Exact Match Score: 0.29207920792079206, F1 Score: 0.3428217821782179
@@ -422,3 +422,158 @@ if __name__ == '__main__':
 # ---------------------------------
 # Arithmetic Exact Match Score: 0.004750593824228029, F1 Score: 0.006532066508313539
 # Arithmetic In Total Exact Match Score: 0.0038314176245210726, F1 Score: 0.005268199233716475
+
+
+
+
+# 240924 chatglm3 refined with example table str evidence str
+# Total Exact Match Score: 0.027777777777777776, F1 Score: 0.035507662835249046
+# ================================
+# Span Exact Match Score: 0.09900990099009901, F1 Score: 0.13782178217821783
+# Span In Total Exact Match Score: 0.019157088122605363, F1 Score: 0.02666666666666667
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.010688836104513063, F1 Score: 0.010961995249406175
+# Arithmetic In Total Exact Match Score: 0.008620689655172414, F1 Score: 0.008840996168582374
+
+
+
+
+# 20240923 chatglm3 refined with example3 table raw evidence str
+# 
+# Total Exact Match Score: 0.01053639846743295, F1 Score: 0.01553639846743295
+# ================================
+# Span Exact Match Score: 0.04950495049504951, F1 Score: 0.07262376237623762
+# Span In Total Exact Match Score: 0.009578544061302681, F1 Score: 0.014051724137931034
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0011876484560570072, F1 Score: 0.0018408551068883612
+# Arithmetic In Total Exact Match Score: 0.0009578544061302681, F1 Score: 0.0014846743295019158
+
+
+
+# 240924 chatglm3 refined with example4 table raw evidence num
+# Total Exact Match Score: 0.016283524904214558, F1 Score: 0.021340996168582375
+# ================================
+# Span Exact Match Score: 0.04950495049504951, F1 Score: 0.07247524752475247
+# Span In Total Exact Match Score: 0.009578544061302681, F1 Score: 0.014022988505747125
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.00831353919239905, F1 Score: 0.009073634204275535
+# Arithmetic In Total Exact Match Score: 0.006704980842911878, F1 Score: 0.007318007662835249
+
+
+
+
+
+# 240924 chatglm3 refined with example2 table str evidence num
+# chatglm3-base_table_str_prompt_example2_evi_num_refine_output_full.jsonl
+#
+# Total Exact Match Score: 0.022030651340996167, F1 Score: 0.038994252873563236
+# ================================
+# Span Exact Match Score: 0.08415841584158416, F1 Score: 0.16851485148514858
+# Span In Total Exact Match Score: 0.016283524904214558, F1 Score: 0.03260536398467434
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.007125890736342043, F1 Score: 0.007921615201900238
+# Arithmetic In Total Exact Match Score: 0.005747126436781609, F1 Score: 0.006388888888888888
+
+
+
+
+
+# 20240925 llama2-chat llama2_table_str_prompt_example2_refine_output.jsonl
+# Total Exact Match Score: 0.0, F1 Score: 0.0070210727969348685
+# ================================
+# Span Exact Match Score: 0.0, F1 Score: 0.03371287128712872
+# Span In Total Exact Match Score: 0.0, F1 Score: 0.006522988505747129
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0, F1 Score: 0.0006175771971496437
+# Arithmetic In Total Exact Match Score: 0.0, F1 Score: 0.0004980842911877395
+
+
+
+
+
+# 20240926 minicpm minicpm_table_raw_prompt_example4_dev_refine_output.jsonl
+# Total Exact Match Score: 0.0009578544061302681, F1 Score: 0.0018678160919540236
+# ================================
+# Span Exact Match Score: 0.0049504950495049506, F1 Score: 0.009554455445544558
+# Span In Total Exact Match Score: 0.0009578544061302681, F1 Score: 0.0018486590038314181
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0, F1 Score: 2.3752969121140145e-05
+# Arithmetic In Total Exact Match Score: 0.0, F1 Score: 1.9157088122605363e-05
+
+
+
+
+
+
+
+# 20240926 minicpm_table_str_prompt_example2_dev_evi_num_refine_output.jsonl
+# Total Exact Match Score: 0.012452107279693486, F1 Score: 0.013927203065134099
+# ================================
+# Span Exact Match Score: 0.019801980198019802, F1 Score: 0.025445544554455444
+# Span In Total Exact Match Score: 0.0038314176245210726, F1 Score: 0.004923371647509578
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.010688836104513063, F1 Score: 0.011163895486935867
+# Arithmetic In Total Exact Match Score: 0.008620689655172414, F1 Score: 0.009003831417624522
+
+
+
+
+
+
+# equation: 
+
+# 20240926 chatglm3-base_table_str_prompt_equation_dev_evi_num_top30_refine_output_full.jsonl
+# Total Exact Match Score: 0.022988505747126436, F1 Score: 0.041264367816091975
+# ================================
+# Span Exact Match Score: 0.09405940594059406, F1 Score: 0.1827227722772278
+# Span In Total Exact Match Score: 0.018199233716475097, F1 Score: 0.03535440613026822
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0059382422802850355, F1 Score: 0.007327790973871734
+# Arithmetic In Total Exact Match Score: 0.004789272030651341, F1 Score: 0.005909961685823755
+
+
+
+
+# equation hints
+# 20240926 chatglm3-base_table_str_prompt_woexample_dev_evi_num_top30_refine_output_full.jsonl
+# Total Exact Match Score: 0.03639846743295019, F1 Score: 0.044703065134099614
+# ================================
+# Span Exact Match Score: 0.15346534653465346, F1 Score: 0.1914851485148515
+# Span In Total Exact Match Score: 0.029693486590038315, F1 Score: 0.03704980842911877
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.00831353919239905, F1 Score: 0.009489311163895488
+# Arithmetic In Total Exact Match Score: 0.006704980842911878, F1 Score: 0.0076532567049808434
+
+
+
+# minicpm_table_str_prompt_equation_dev_evi_num_top30_refine_output.jsonl
+# Total Exact Match Score: 0.013409961685823755, F1 Score: 0.015134099616858238
+# ================================
+# Span Exact Match Score: 0.0, F1 Score: 0.008811881188118813
+# Span In Total Exact Match Score: 0.0, F1 Score: 0.0017049808429118777
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0166270783847981, F1 Score: 0.01665083135391924
+# Arithmetic In Total Exact Match Score: 0.013409961685823755, F1 Score: 0.01342911877394636
+
+
+
+
+# 20240927 chatglm3-base_table_str_prompt_glm3format_dev_evi_num_top30_refine_output_full.jsonl
+# Total Exact Match Score: 0.039272030651340994, F1 Score: 0.045699233716475086
+# ================================
+# Span Exact Match Score: 0.15841584158415842, F1 Score: 0.19004950495049502
+# Span In Total Exact Match Score: 0.03065134099616858, F1 Score: 0.03677203065134099
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.010688836104513063, F1 Score: 0.011068883610451307
+# Arithmetic In Total Exact Match Score: 0.008620689655172414, F1 Score: 0.0089272030651341
+
+
+
+# 20240927 chatglm3-base_table_str_prompt_glm3format_woexample_dev_evi_num_top30_refine_output_full.jsonl
+# Total Exact Match Score: 0.008620689655172414, F1 Score: 0.03431034482758624
+# ================================
+# Span Exact Match Score: 0.034653465346534656, F1 Score: 0.1537623762376239
+# Span In Total Exact Match Score: 0.006704980842911878, F1 Score: 0.029750957854406155
+# ---------------------------------
+# Arithmetic Exact Match Score: 0.0023752969121140144, F1 Score: 0.005653206650831353
+# Arithmetic In Total Exact Match Score: 0.0019157088122605363, F1 Score: 0.004559386973180077

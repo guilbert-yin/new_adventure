@@ -94,7 +94,7 @@ def get_prompt_template(fn):
     return pf
 
 
-def get_markdown_table(table):
+def get_markdown_table(table, without_header_line=True):
     table_content = ""
 
     header = table[0]
@@ -102,14 +102,17 @@ def get_markdown_table(table):
     header_str = "|".join(new_header)
     header_str = "|" + header_str + "|\n"
 
-    header_md_split = [":---:" for i in range(len(new_header))]
-    header_md_split_str = "|".join(header_md_split)
-    header_md_split_str = "|" + header_md_split_str + "|\n"
-
     table_content += header_str
-    table_content += header_md_split_str
+
+    if without_header_line == False:
+        header_md_split = [":---:" for i in range(len(new_header))]
+        header_md_split_str = "|".join(header_md_split)
+        header_md_split_str = "|" + header_md_split_str + "|\n"
+        
+        table_content += header_md_split_str
 
     for j in range(1,len(table)):
+        # print("j : ", j)
         row = table[j]
         new_row = [str(r) if r != "" else "---" for r in row]
         row_str = "|".join(new_row)
@@ -284,6 +287,7 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
             table_array_2d = table_md.to_numpy()
             table_raw_array_2d_list.append(table_array_2d)
 
+            # 获取表格的md形式
             md_table = get_markdown_table(table_array_2d)
             current_table_all_str = table_seq_str + md_table + "\n"
 
@@ -340,7 +344,7 @@ def construct_the_final_prompt(fn_header, fn_body, fn_dataset):
         # response_str = final_prompt[len("### Response") + response_index:]
 
         
-        # print(prompt_prefix)
+        print(prompt_prefix)
         # print(final_prompt)
         # print(response_str)
         # exit(0)
