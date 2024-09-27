@@ -102,6 +102,26 @@ class DataTrainingArguments:
         default=None, metadata={"help": "The input training data file (a jsonlines or csv file)."}
     )
 
+    num_train_epochs: Optional[int] = field(
+        default=10,
+        metadata={
+            "help": (
+                "The maximum total checkpoint limit "
+                "limit."
+            )
+        },
+    )
+
+    save_total_limit: Optional[int] = field(
+        default=5,
+        metadata={
+            "help": (
+                "The maximum total checkpoint limit "
+                "limit."
+            )
+        },
+    )
+
     max_seq_length: Optional[int] = field(
         default=2048,
         metadata={
