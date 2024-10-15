@@ -1,0 +1,15 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the table description, we can find the following values for Electric:
+Operating revenues of Twelve Months Ended December 31, 2014 Electric is $8,437.
+Purchased power of Twelve Months Ended December 31, 2014 Electric is 2036.
+Fuel of Twelve Months Ended December 31, 2014 Electric is 180.
+Other operations and maintenance of Twelve Months Ended December 31, 2014 Electric is 2270.
+So the evidence is "Operating revenues: $8,437; Purchased power: 2036; Fuel: 180; Other operations and maintenance: 2270". For this example, the question type is 'arithmetic'. To calculate the total value, the equation is "8437 + 2036 + 180 + 2270". If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+Final Answer
+The equation is: <Prog>8437 + 2036 + 180 + 2270</Prog>, and the answer is: <Ans>$12923</Ans>.
+
+
+
+The equation is: <Prog>((8437 + 2036) + 180) + 2270</Prog>, and the answer is: <Ans>12923.0</Ans>

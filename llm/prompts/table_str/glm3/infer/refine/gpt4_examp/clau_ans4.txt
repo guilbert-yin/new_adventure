@@ -1,0 +1,21 @@
+To answer this question, I'll follow these steps:
+
+Identify the years with Operating lease obligations data
+Find the year with the lowest Operating lease obligations
+Sum the Capital lease obligations for that year
+Steps:
+Operating lease obligations by year:
+Less than 1 year: 218
+1-3 years: 334
+3-5 years: 209
+After 5 years: 644
+The lowest Operating lease obligation is 209 for the 3-5 years period.
+Capital lease obligations for the 3-5 years period: 4
+Final Answer
+The equation is: <Prog>4</Prog>, and the answer is: <Ans>4</Ans>
+
+The sum amount of Capital lease obligations in the year with the lowest amount of Operating lease obligations (3-5 years) is $4 million.
+
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>4</Ans>

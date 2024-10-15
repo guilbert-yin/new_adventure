@@ -1,0 +1,21 @@
+To answer this question, I'll need to follow these steps:
+
+Identify the relevant information from the table description.
+Add the values for Net interest revenue and Non-interest revenue for 2009.
+Step 1: Identifying relevant information
+From the table description, we can find:
+
+Net interest revenue of 2009 is $5,651
+Non-interest revenue of 2009 is 4138
+Step 2: Adding the values
+Now, we need to add these two values:
+$5,651 + 4138 = $9,789 million
+
+Final Answer
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789</Ans>
+
+The total amount of Net interest revenue and Non-interest revenue in 2009 was $9,789 million.
+
+
+
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789.0</Ans>

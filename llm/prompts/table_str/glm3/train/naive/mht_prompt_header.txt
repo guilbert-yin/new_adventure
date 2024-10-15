@@ -1,0 +1,3 @@
+Instruction:
+Below is a scenario that describes a question answering task in the finance domain, paired with several input tables and its relevant text that provide further context. Each cell of those tables will be described by a sentence. We regard this kind of table as table description which is shown in '### Table Description' section, and the related texts are shown is '### Text' section. The given question is relevant to the table descriptions and texts. Generate an appropriate answer to the given question.
+-->

@@ -1,0 +1,18 @@
+Steps
+Step 1: Identify the type of question being asked. The current question type is 'arithmetic' because it requires a calculation involving values extracted from the data provided.
+
+Step 2: Extract relevant numerical values from the table descriptions or texts. From the table description, we see that:
+
+The fair market value of plan assets for 2014 is $4,114.6.
+The fair market value of plan assets for 2015 is $3,916.4.
+To find the decrease in fair market value of plan assets from 2014 to 2015, we can set up the equation:
+
+Decrease = 4,114.6 - 3,916.4.
+Step 3: Since the question requires an arithmetic operation, we calculate the decrease:
+
+Decrease = 4,114.6 - 3,916.4 = 198.2.
+Final Answer
+The equation is: <Prog>(4114.6 - 3916.4)</Prog>, and the answer is: <Ans>198.2</Ans>.
+
+
+The equation is: <Prog>(3916.4 - 4114.6) / 4114.6</Prog>, and the answer is: <Ans>-0.04817</Ans>

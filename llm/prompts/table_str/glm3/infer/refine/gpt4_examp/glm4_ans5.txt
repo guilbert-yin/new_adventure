@@ -1,0 +1,13 @@
+Steps
+Step 1: Predict the type of question being asked. Based on all the provided information including table description, text, and questions, the current question type is 'span_selection'.
+
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts.
+From the description of the question, it can be extracted from the table description that the Other Expense for the years ended September 30, 2007, 2008, and 2009 are $31,921, $40,973, and $26,955, respectively. So the evidence is '31921, 40973, 26955'.
+
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer. Finally, it is necessary to strictly generate a response containing the equation and the answer in the following template: 'The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>'.
+
+Final Answer
+The years in which Other Expense is greater than $30,000 are 2007 and 2008. Therefore, the answer is: <Ans>2007, 2008</Ans>.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2007 2008</Ans>

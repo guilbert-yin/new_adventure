@@ -1,0 +1,8 @@
+## Instruction
+Below is a scenario that describes a question answering task in the finance domain, paired with several input tables and its relevant text that provide further context. Each cell of those tables will be described by a sentence. We regard this kind of table as table description. The given question is relevant to the table descriptions and texts. Generate an appropriate answer to the given question. You can think and break down the problem through the steps defined in 'Steps' section, so that you can provide accurate answers in the 'Final Answer' section.
+Your task is to generate an appropriate answer to the given question according to the specified template.
+
+## Important Instructions
+### Your response MUST strictly follow the answer template below:
+#### The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>.
+#### If the question does not require an equation, you must use <Prog>N.A.</Prog> for the equation.

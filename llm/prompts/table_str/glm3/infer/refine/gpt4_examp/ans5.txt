@@ -1,0 +1,16 @@
+Steps
+Step 1: Identify the type of question being asked. This is a "span_selection" question since it requires extracting data from the provided table descriptions.
+
+Step 2: Extract relevant information from the table descriptions. The relevant data for "Other Expense" for the years in question are as follows:
+
+Other Expense for the year ended September 30, 2007: $31,921 (greater than 30,000)
+Other Expense for the year ended September 30, 2008: $40,973 (greater than 30,000)
+Other Expense for the year ended September 30, 2009: $26,955 (less than 30,000)
+Step 3: Compare the extracted values with the threshold (30,000). The years where Other Expense is greater than 30,000 are 2007 and 2008.
+
+Final Answer
+Other Expense is greater than 30,000 in the years 2007 and 2008.
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2007, 2008</Ans>
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2007 2008</Ans>

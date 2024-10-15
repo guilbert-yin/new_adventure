@@ -1,0 +1,85 @@
+## Instruction
+Below is a scenario that describes a question answering task in the finance domain, paired with several input tables and its relevant text that provide further context. Each cell of those tables will be described by a sentence. We regard this kind of table as table description. The given question is relevant to the table descriptions and texts. Generate an appropriate answer to the given question. You can think and break down the problem through the steps defined in 'Steps' section, so that you can provide accurate answers in the 'Final Answer' section.
+Your task is to generate an appropriate answer to the given question according to the specified template.
+
+## Important Instructions
+### Your response MUST strictly follow the answer template below:
+#### The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>.
+#### If the question does not require an equation, you must use <Prog>N.A.</Prog> for the equation.
+Next, I will provide you with a complete example between '### Start of Example' and '### End of Example', followed by a real question and relevant background information after '### End of Example'.
+
+## Start of Example
+### Table Description
+Total Consolidated Revenues of 2011 is $5,625.6 .
+Total Consolidated Revenues of 2012 is $5,807.6 .
+Total Consolidated Revenues of 2010 is $5,145.6 .
+Total revenues (a) of Year Ended December 31, 2007 (Dollar amounts in thousands, except weighted average amounts) is 1396758 .
+FSG of 2011 is $2,076.8 .
+FSG of 2012 is $2,246.4 .
+
+### Text
+Strategy Our mission is to achieve sustainable revenue and earnings growth through providing superior solutions to our customers. 
+Our strategy to achieve this has been and will continue to be built on the following pillars: ? Expand Client Relationships — The overall market we serve continues to gravitate beyond single-product purchases to multi-solution partnerships. As the market dynamics shift, we expect our clients to rely more on our multidimensional service offerings.
+
+### Question
+what is the growth rate in the consolidated revenues from 2011 to 2012?
+
+### Response
+#### Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. 
+From the description of the question, it can be extracted from the table description that the Total Consolidated Revenue for 2011 and 2012 are $5,807.6 and $5,625.6, respectively. So the evidence is '$5,807.6 ## $5,625.6'. For this example, the question type is 'arithmetic'. To calculate the growth difference of the Total Consolidated Revenue from 2011 to 2012, formula '(5807.6 - 5625.6)' should be used. So in order to calculate the Total Consolidated Revenue from 2011 to 2012, equation '(5807.6 - 5625.6) / 5625.6' can be used to calculate the final answer. If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+#### Final Answer
+The equation is: <Prog>(5807.6 - 5625.6) / 5625.6</Prog>, and the answer is: <Ans>0.03235</Ans>
+## End of Example
+
+This is the end of the example section, and the following is the real scenario and related question -->
+
+### Table Description
+Table 2 shows Benefit obligation at year end of Pension Benefits 2002 is $106,224 .
+Table 2 shows Benefit obligation at year end of Pension Benefits 2001 is $89,587 .
+Table 2 shows Benefit obligation at beginning of year of Pension Benefits 2002 is $89,587 .
+Table 2 shows Benefit obligation at beginning of year of Pension Benefits 2001 is $76,623 .
+Table 2 shows Benefit obligation at year end of Other Benefits 2002 is $6,141 .
+Table 2 shows Transition (assets) obligation recognition Components of net periodic benefit cost of Pension Benefits 2002 is 24 .
+Table 2 shows Transition (assets) obligation recognition Components of net periodic benefit cost of Pension Benefits 2001 is 24 .
+Table 2 shows Benefit obligation at year end of Other Benefits 2001 is $2,688 .
+Table 2 shows Benefit obligation at beginning of year of Other Benefits 2002 is $2,688 .
+Table 2 shows Net periodic benefit cost Components of net periodic benefit cost of Pension Benefits 2002 is $7,758 .
+Table 2 shows Net periodic benefit cost Components of net periodic benefit cost of Pension Benefits 2001 is $5,359 .
+Table 2 shows Benefit obligation at beginning of year of Other Benefits 2001 is $2,718 .
+Table 2 shows Service cost Components of net periodic benefit cost of Pension Benefits 2002 is $4,986 .
+Table 2 shows Fair value of plan at end of year Change in plan assets of Pension Benefits 2002 is $56,660 .
+Table 2 shows Benefits paid Change in plan assets of Pension Benefits 2002 is -4239 .
+Table 2 shows Expected return on plan assets Weighted-average assumptions as of December 31, of Pension Benefits 2002 is 8.50% .
+Table 2 shows Service cost Components of net periodic benefit cost of Pension Benefits 2001 is $3,790 .
+Table 2 shows Benefits paid of Pension Benefits 2002 is -4239 .
+Table 2 shows Fair value of plan at end of year Change in plan assets of Pension Benefits 2001 is $53,570 .
+Table 2 shows Benefits paid Change in plan assets of Pension Benefits 2001 is -3873 .
+Table 2 shows Unrecognized net transition obligation (assets) Change in plan assets of Pension Benefits 2001 is 1191 .
+Table 2 shows Benefits paid of Pension Benefits 2001 is -3872 .
+Table 2 shows Unrecognized net transition obligation (assets) Change in plan assets of Pension Benefits 2002 is 1167 .
+Table 2 shows Expected return on plan assets Weighted-average assumptions as of December 31, of Pension Benefits 2001 is 8.50% .
+Table 2 shows Expected return on plan assets Components of net periodic benefit cost of Pension Benefits 2002 is -5474 .
+Table 2 shows Prepaid (accrued) benefit costs Change in plan assets of Pension Benefits 2001 is $-25,549 .
+Table 2 shows Interest cost Components of net periodic benefit cost of Pension Benefits 2001 is 6218 .
+Table 2 shows Prepaid (accrued) benefit costs Change in plan assets of Pension Benefits 2002 is $-22,506 .
+Table 2 shows Fair value of plan assets at beginning of year Change in plan assets of Pension Benefits 2002 is $53,570 .
+Table 2 shows Expected return on plan assets Components of net periodic benefit cost of Pension Benefits 2001 is -4899 .
+
+### Text
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS—(Continued) merchant acquiring business in the United Kingdom to the partnership. In addition, HSBC UK entered into a ten-year marketing alliance with the partnership in which HSBC UK will refer customers to the partnership for payment processing services in the United Kingdom. On June 23, 2008, we entered into a new five year, $200 million term loan to fund a portion of the acquisition. We funded the remaining purchase price with excess cash and our existing credit facilities. The term loan bears interest, at our election, at the prime rate or London Interbank Offered Rate plus a margin based on our leverage position. As of July 1, 2008, the interest rate on the term loan was 3.605%. The term loan calls for quarterly principal payments of $5 million beginning with the quarter ending August 31, 2008 and increasing to $10 million beginning with the quarter ending August 31, 2010 and $15 million beginning with the quarter ending August 31, 2011. The partnership agreement includes provisions pursuant to which HSBC UK may compel us to purchase, at fair value, additional membership units from HSBC UK (the “Put Option”). HSBC UK may exercise the Put Option on the fifth anniversary of the closing of the acquisition and on each anniversary thereafter. By exercising the Put Option, HSBC UK can require us to purchase, on an annual basis, up to 15% of the total membership units. Additionally, on the tenth anniversary of closing and each tenth anniversary thereafter, HSBC UK may compel us to purchase all of their membership units at fair value. While not redeemable until June 2013, we estimate the maximum total redemption amount of the minority interest under the Put Option would be $421.4 million, as of May 31, 2008. The purpose of this acquisition was to establish a presence in the United Kingdom. The key factors that contributed to the decision to make this acquisition include historical and prospective financial statement analysis and HSBC UK’s market share and retail presence in the United Kingdom. The purchase price was determined by analyzing the historical and prospective financial statements and applying relevant purchase price multiples. The purchase price totaled $441.1 million, consisting of $438.6 million cash consideration plus $2.5 million of direct out of pocket costs. The acquisition has been recorded using the purchase method of accounting, and, accordingly, the purchase price has been allocated to the assets acquired and liabilities assumed based on their estimated fair values at the date of acquisition. The following table summarizes the preliminary purchase price allocation: ## Table 0 ## Due to the recent timing of the transaction, the allocation of the purchase price is preliminary. All of the goodwill associated with the acquisition is expected to be deductible for tax purposes. The customer-related intangible assets have amortization periods of up to 13 years. The contract-based intangible assets have amortization periods of 7 years. The trademark has an amortization period of 5 years. Our long-term debt, including the current portion, was $31.1 billion at December 30, 2017 and $31.8 billion at December 31, 2016. The decrease in long- term debt was primarily due to our June 2017 repayment of approximately $2.0 billion aggregate principal amount of senior notes that matured in the period and our August 2017 repayment of the $600 million aggregate principal amount Term Loan Facility. The decrease was partially offset by approximately $1.5 billion aggregate principal amount of long-term debt issued in August 2017. Our long-term debt contains customary representations, covenants, and events of default. We were in compliance with all such covenants at December 30, 2017. See Note 16, Debt, to the consolidated financial statements for additional information. We have approximately $2.5 billion aggregate principal amount and $C200 million aggregate principal amount of senior notes that will mature in the third quarter of 2018. We expect to fund these long-term debt repayments primarily with new long-term debt issuances, cash on hand, and cash generated from our operating activities. Off-Balance Sheet Arrangements and Aggregate Contractual Obligations Off-Balance Sheet Arrangements: We do not have guarantees or other off-balance sheet financing arrangements that we believe are reasonably likely to have a current or future effect on our financial condition, changes in financial condition, revenue or expenses, results of operations, liquidity, capital expenditures, or capital resources. See Note 14, Financing Arrangements, to the consolidated financial statements for a discussion of our accounts receivable securitization and factoring programs and other financing arrangements. Aggregate Contractual Obligations: The following table summarizes our contractual obligations at December 30, 2017 (in millions): ## Table 1 ## (a) Amounts represent the expected cash payments of our long-term debt, including interest on variable and fixed rate long-term debt. Interest on variable rate long-term debt is calculated based on interest rates at December 30, 2017. (b) Amounts represent the expected cash payments of our capital leases, including expected cash payments of interest expense. (c) Operating leases represent the minimum rental commitments under non-cancelable operating leases. (d) We have purchase obligations for materials, supplies, property, plant and equipment, and co-packing, storage and distribution services based on projected needs to be utilized in the normal course of business. Other purchase obligations include commitments for marketing, advertising, capital expenditures, information technology, and professional services. Arrangements are considered purchase obligations if a contract specifies all significant terms, including fixed or minimum quantities to be purchased, a pricing structure, and approximate timing of the transaction. A few of these obligations are long-term and are based on minimum purchase requirements. Certain purchase obligations contain variable pricing components, and, as a result, actual cash payments are expected to fluctuate based on changes in these variable components. Due to the proprietary nature of some of our materials and processes, certain supply contracts contain penalty provisions for early terminations. We do not believe that a material amount of penalties is reasonably likely to be incurred under these contracts based upon historical experience and current expectations. We exclude amounts reflected on the consolidated balance sheet as accounts payable and accrued liabilities from the table above. (e) Other long-term liabilities primarily consist of estimated payments for the one-time toll charge related to U. S.  tax reform, as well as postretirement benefit commitments. Certain other long-term liabilities related to income taxes, insurance accruals, and other accruals included on the consolidated balance sheet are excluded from the above table as we are unable to estimate the timing of payments for these items. Future payments related to other long-term liabilities decreased primarily due to payments of $1.2 billion in 2017 to pre- fund a portion of our U. S.  postretirement plan benefits. See Note 10, Postemployment Benefits, to the consolidated financial statements for additional information. During the second quarter of 2016, we redeemed all outstanding shares of our Series A Preferred Stock, therefore we no longer pay Series A Preferred Stock dividends. See Note 17, Capital Stock, to the consolidated financial statements for additional information. Note 6 - Employee Benefit Plans Pension Plan and Other Postretirement Benefit Plans The Company has a non-contributory defined benefit pension plan covering substantially all of its domestic employees. The benefits are based on an employee’s years of service and average earnings for the 60 consecutive calendar months of highest compensation. The Company also has an unfunded restoration plan to ensure payments of amounts for which employees are entitled under the provisions of the pension plan, but which are subject to limitations imposed by federal tax laws. The Company’s funding policy has been to make annual contributions equal to the actuarially computed liability to the extent such amounts are deductible for income tax purposes. Plan assets consist of equity securities and fixed income investments. The Company sponsors other plans for the benefit of its employees and retirees. These plans include health care and life insurance benefits. The following table reflects the required disclosures on the Company’s pension and other postretirement benefit plans at December 31: ## Table 2 ##
+
+### Question
+Which year is the amount of Benefit obligation at year end for Pension Benefits larger?
+
+### Response
+
+
+| step | output |
+| 1 | span_selection |
+| 2 | The following table reflects the required disclosures on the Company’s pension and other postretirement benefit plans at December 31: ## $106,224 ## $89,587 |
+| 3 | N.A. |
+| 4 | 2002 |
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>

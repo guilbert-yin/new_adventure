@@ -1,0 +1,18 @@
+To answer this question, I'll examine the "Other Expense" values for each year provided in the table description.
+
+Steps
+Extract relevant data:
+Year Ended September 30, 2007: Other Expense is 31921
+Year Ended September 30, 2008: Other Expense is 40973
+Year Ended September 30, 2009: Other Expense is 26955
+Identify which years have Other Expense greater than 30000:
+2007: 31921 > 30000
+2008: 40973 > 30000
+2009: 26955 < 30000
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>Other Expense is greater than 30000 in 2007 and 2008</Ans>
+
+Other Expense exceeds 30000 in two years: 2007 and 2008. In 2007, it was 31921, and in 2008, it was 40973, both of which are above 30000. In 2009, it fell below 30000 to 26955.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2007 2008</Ans>

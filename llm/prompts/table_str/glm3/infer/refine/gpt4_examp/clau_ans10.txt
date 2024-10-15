@@ -1,0 +1,9 @@
+To answer this question, I'll need to calculate the difference between the fair market value of plan assets at the end of fiscal year 2014 and the value as of September 30, 2015.
+
+The equation is: <Prog>4114.6 - 3916.4</Prog>, and the answer is: <Ans>198.2</Ans>.
+
+The fair market value of plan assets decreased by $198.2 million between the end of fiscal year 2014 and September 30, 2015.
+
+
+
+The equation is: <Prog>(3916.4 - 4114.6) / 4114.6</Prog>, and the answer is: <Ans>-0.04817</Ans>

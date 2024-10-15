@@ -1,0 +1,21 @@
+To answer this question, I'll need to sum up the values for Operating revenues, Purchased power, Fuel, and Other operations and maintenance for the Electric category from the most recent year (2014) provided in the table descriptions.
+
+Let's gather the relevant information:
+
+Operating revenues (2014 Electric): $8,437
+Purchased power (2014 Electric): 2036
+Fuel (2014 Electric): 180
+Other operations and maintenance (2014 Electric): 2270
+Now, let's add these values:
+
+<Prog>8437 + 2036 + 180 + 2270</Prog>
+
+Calculating this sum gives us the total value.
+
+The equation is: <Prog>8437 + 2036 + 180 + 2270</Prog>, and the answer is: <Ans>12923</Ans>.
+
+The total value of Operating revenues, Purchased power, Fuel, and Other operations and maintenance for Electric in 2014 is $12,923 million.
+
+
+
+The equation is: <Prog>((8437 + 2036) + 180) + 2270</Prog>, and the answer is: <Ans>12923.0</Ans>

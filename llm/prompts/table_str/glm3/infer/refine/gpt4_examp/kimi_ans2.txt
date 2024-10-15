@@ -1,0 +1,12 @@
+Steps
+Step 1: Identify the type of question. The question is asking for the growth rate of General and administrative expense in the year with the most other revenues. This indicates an 'arithmetic' type of question.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description, we can see that the Other revenues for Years Ended December 31, 2014 (in millions) is 9, and the change is 50%
+ . We also need the General and administrative expenses for the same year, which is 212 million
+ .
+Step 3: To calculate the growth rate of General and administrative expense, we can use the formula: (New Value - Old Value) / Old Value. However, since we only have the values for the year 2014 and not the previous year, we cannot calculate the growth rate from 2013 to 2014. But we can still identify that the year with the most other revenues is 2014, as the change in other revenues is given as 50%.
+
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2014</Ans> (This is the year with the most other revenues, but the growth rate of General and administrative expenses cannot be calculated due to lack of data for the previous year).
+
+
+The equation is: <Prog>((-12 / 33) + 1) * 21</Prog>, and the answer is: <Ans>13.36364</Ans>

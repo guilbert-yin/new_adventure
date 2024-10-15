@@ -1,0 +1,11 @@
+Steps
+Step 1: Identify the type of question. The question is asking for a specific data point, the market capitalization as of a certain date, which indicates a 'span_selection' type of question.
+Step 2: Extract the relevant information from the provided text. The relevant information can be found in the text: "On February 19, 2016, the closing price of our common stock was $87.32 per share as reported on the NYSE. As of February 19, 2016, we had 423,897,556 outstanding shares of common stock and 159 registered holders."
+Step 3: Calculate the market capitalization by multiplying the closing price per share by the number of outstanding shares.
+
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>37138116963.2</Ans> (This is calculated by multiplying the closing price per share $87.32 by the number of outstanding shares 423,897,556).
+
+
+
+The equation is: <Prog>423897556 * 87.32</Prog>, and the answer is: <Ans>37014734589.92</Ans>

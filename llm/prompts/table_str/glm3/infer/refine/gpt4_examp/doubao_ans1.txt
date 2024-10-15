@@ -1,0 +1,9 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description of the question, it can be extracted from the table description that as of February 19, 2016, we had 423,897,556 outstanding shares of common stock and the closing price of our common stock was $87.32 per share. So the evidence is '423897556 ## 87.32'. For this example, the question type is 'arithmetic'. To calculate the market capitalization, formula '423897556 * 87.32' should be used. So in order to calculate the market capitalization as of February 19, 2016, equation '423897556 * 87.32' can be used to calculate the final answer. If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+Final Answer
+The equation is: <Prog>423897556 * 87.32</Prog>, and the answer is: <Ans>37037244659.2</Ans>
+
+
+The equation is: <Prog>423897556 * 87.32</Prog>, and the answer is: <Ans>37014734589.92</Ans>

@@ -1,0 +1,13 @@
+
+Input:
+### Table Description
+{table}
+
+### Text
+{text}
+
+Question:
+{question}
+
+Answer:
+{gold_answer}

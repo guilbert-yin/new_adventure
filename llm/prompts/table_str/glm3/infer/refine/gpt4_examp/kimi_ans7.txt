@@ -1,0 +1,10 @@
+Steps
+Step 1: Identify the type of question. The question is asking for the increasing rate of Total revenues in the year with the largest amount of General and administrative expense. This indicates an 'arithmetic' type of question.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description, we can see that the General and administrative expense for Years Ended December 31, 2014 is $212 million and for 2015 is $180 million. So, the year with the largest amount of General and administrative expense is 2014. The Total revenues for Years Ended December 31, 2014 is $4 million and for 2015 is $3 million.
+Step 3: Calculate the increasing rate of Total revenues. The formula to calculate the rate of change is: (New Value - Old Value) / Old Value. In this case, the New Value is the Total revenues of 2015, and the Old Value is the Total revenues of 2014.
+
+Final Answer
+The equation is: <Prog>(3 - 4) / 4</Prog>, and the answer is: <Ans>-0.25</Ans>.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-0.25</Ans>

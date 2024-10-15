@@ -1,0 +1,35 @@
+To answer this question, I'll follow these steps:
+
+Identify the year with the most other revenues
+Calculate the growth rate of General and administrative expense for that year
+Step 1: Identify the year with the most other revenues
+
+From the table description:
+
+Other revenues in 2013: $6 million
+Other revenues in 2014: $9 million
+2014 had the most other revenues.
+
+Step 2: Calculate the growth rate of General and administrative expense for 2014
+
+General and administrative expense:
+
+2013: $210 million
+2014: $212 million
+To calculate the growth rate, we'll use the formula:
+(New Value - Original Value) / Original Value
+
+Growth rate = (212 - 210) / 210
+
+Let's calculate this:
+
+The equation is: <Prog>(212 - 210) / 210</Prog>
+And the answer is: <Ans>0.00952</Ans>
+
+This represents a growth rate of approximately 0.95% or 0.0095 when expressed as a decimal.
+
+Final Answer: In 2014, the year with the most other revenues, the growth rate of General and administrative expense was 0.00952 or approximately 0.95%.
+
+
+The equation is: <Prog>((-12 / 33) + 1) * 21</Prog>, and the answer is: <Ans>13.36364</Ans>
+

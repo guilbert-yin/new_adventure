@@ -1,0 +1,10 @@
+Steps
+Step 1: Identify the type of question. The question is asking for the decrease observed in the fair market value of plan assets of the benefit pension plans during 2014 and 2015, which indicates an 'arithmetic' type of question.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description, we can see that the fair market value of plan assets for our defined benefit pension plans as of the 30 September 2015 measurement date decreased to $3,916.4 from $4,114.6 at the end of fiscal year 2014. So the evidence is '$3,916.4 ## $4,114.6'.
+Step 3: Calculate the decrease by subtracting the later value from the earlier value.
+
+Final Answer
+The equation is: <Prog>4114.6 - 3916.4</Prog>, and the answer is: <Ans>198.2</Ans>.
+
+
+The equation is: <Prog>(3916.4 - 4114.6) / 4114.6</Prog>, and the answer is: <Ans>-0.04817</Ans>

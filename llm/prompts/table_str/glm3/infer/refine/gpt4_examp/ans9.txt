@@ -1,0 +1,26 @@
+Steps
+Step 1: Predict the type of question being asked. The current question type is 'arithmetic' because it requires summing multiple values.
+
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the table descriptions:
+
+Operating revenues of Twelve Months Ended December 31, 2014 Electric is $8,437 million.
+Purchased power of Twelve Months Ended December 31, 2014 Electric is $2,036 million.
+Fuel of Twelve Months Ended December 31, 2014 Electric is $180 million.
+Other operations and maintenance of Twelve Months Ended December 31, 2014 Electric is $2,270 million.
+Step 3: To calculate the total value of Operating revenues, Purchased power, Fuel, and Other operations and maintenance for Electric, the equation will be:
+
+Total
+=
+8437
++
+2036
++
+180
++
+2270
+Total=8437+2036+180+2270
+Final Answer
+The equation is: <Prog>8437 + 2036 + 180 + 2270</Prog>, and the answer is: <Ans>10903</Ans>.
+
+
+The equation is: <Prog>((8437 + 2036) + 180) + 2270</Prog>, and the answer is: <Ans>12923.0</Ans>

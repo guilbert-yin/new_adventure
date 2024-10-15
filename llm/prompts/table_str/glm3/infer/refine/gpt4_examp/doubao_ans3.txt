@@ -1,0 +1,8 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description of the question, it can be extracted from the table description that Net interest revenue in 2009 is $5,651 and Non-interest revenue in 2009 is $4,138. So the evidence is '5651 ## 4138'. For this example, the question type is 'arithmetic'. To calculate the total amount of Net interest revenue and Non-interest revenue in 2009, formula '5651 + 4138' should be used. So in order to calculate the total amount of Net interest revenue and Non-interest revenue in 2009, equation '5651 + 4138' can be used to calculate the final answer. If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer. Finally, it is necessary to strictly generate response containing the equation and the answer in the following template: 'The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>'.
+Final Answer
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789</Ans>
+
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789.0</Ans>

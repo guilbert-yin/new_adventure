@@ -1,0 +1,10 @@
+Steps
+Step 1: Identify the type of question. The question is asking for the year when Other Expense was greater than 30,000. This indicates a 'span_selection' type of question.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description, we can see that the Other Expense for Year Ended September 30, 2007 is $31,921, for Year Ended September 30, 2008 is $40,973, and for Year Ended September 30, 2009 is $26,955.
+Step 3: Since the question asks for the year when Other Expense was greater than 30,000, we can see from the extracted values that the years 2007 and 2008 have Other Expenses greater than 30,000.
+
+Final Answer
+The years when Other Expense was greater than 30,000 are 2007 and 2008.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2007 2008</Ans>

@@ -1,0 +1,52 @@
+Steps
+Step 1: The question type is identified as "arithmetic" since it involves calculating a growth rate based on numerical values.
+
+Step 2: Extract the relevant data from the table descriptions. The General and Administrative (G&A) expenses for 2013 and 2014 are $210 million and $212 million, respectively. The growth rate is calculated using the formula:
+
+Growth Rate
+=
+Value in 2014
+−
+Value in 2013
+Value in 2013
+Growth Rate= 
+Value in 2013
+Value in 2014−Value in 2013
+​
+ 
+Substitute the values:
+
+Growth Rate
+=
+212
+−
+210
+210
+Growth Rate= 
+210
+212−210
+​
+ 
+Step 3: Perform the arithmetic calculation.
+
+212
+−
+210
+210
+=
+2
+210
+≈
+0.00952
+210
+212−210
+​
+ = 
+210
+2
+​
+ ≈0.00952
+Final Answer:
+The equation is: <Prog>(212 - 210) / 210</Prog>, and the answer is: <Ans>0.00952</Ans>
+
+The equation is: <Prog>((-12 / 33) + 1) * 21</Prog>, and the answer is: <Ans>13.36364</Ans>

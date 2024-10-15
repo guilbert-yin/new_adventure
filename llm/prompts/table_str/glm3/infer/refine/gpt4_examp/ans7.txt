@@ -1,0 +1,61 @@
+Steps
+Step 1: Determine the year with the largest General and administrative expense from the table descriptions. The General and administrative expenses for 2015 is $180 million and for 2014 is $212 million. The largest amount is for the year 2014.
+
+Step 2: Extract the relevant Total revenues for the years 2014 and 2015 from the table descriptions. The Total revenues for 2014 is $4 million and for 2015 is $3 million.
+
+Step 3: Calculate the increasing rate of Total revenues from 2014 to 2015. Since the revenue decreased from 2014 to 2015, the formula for calculating the growth rate can be expressed as:
+
+Growth Rate
+=
+Total Revenues
+2015
+−
+Total Revenues
+2014
+Total Revenues
+2014
+Growth Rate= 
+Total Revenues 
+2014
+​
+ 
+Total Revenues 
+2015
+​
+ −Total Revenues 
+2014
+​
+ 
+​
+ 
+Substituting in the values:
+
+Growth Rate
+=
+3
+−
+4
+4
+=
+−
+1
+4
+=
+−
+0.25
+Growth Rate= 
+4
+3−4
+​
+ = 
+4
+−1
+​
+ =−0.25
+Step 4: Since the question asks for the increasing rate and the result is negative, this indicates a decrease rather than an increase.
+
+Final Answer
+The equation is: <Prog>(3 - 4) / 4</Prog>, and the answer is: <Ans>-0.25</Ans>.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-0.25</Ans>

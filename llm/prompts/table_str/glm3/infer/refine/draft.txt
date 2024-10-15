@@ -1,0 +1,57 @@
+## Instruction
+Below is a scenario that describes a question answering task in the finance domain, paired with several input tables and its relevant text that provide further context. Each cell of those tables will be described by a sentence. We regard this kind of table as table description. The given question is relevant to the table descriptions and texts. Generate an appropriate answer to the given question. You can think and break down the problem through the steps defined in 'Steps' section, so that you can provide accurate answers in the 'Final Answer' section.
+Your task is to generate an appropriate answer to the given question according to the specified template.
+
+## Important Instructions
+### Your response MUST strictly follow the answer template below:
+#### The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>.
+#### If the question does not require an equation, you must use <Prog>N.A.</Prog> for the equation.
+
+Next, I will provide you with a complete example between '### Start of Example' and '### End of Example', followed by a real question and relevant background information after '### End of Example'.
+
+## Start of Example
+### Table Description
+Total Consolidated Revenues of 2011 is $5,625.6 .
+Total Consolidated Revenues of 2012 is $5,807.6 .
+Total Consolidated Revenues of 2010 is $5,145.6 .
+Total revenues (a) of Year Ended December 31, 2007 (Dollar amounts in thousands, except weighted average amounts) is 1396758 .
+FSG of 2011 is $2,076.8 .
+FSG of 2012 is $2,246.4 .
+
+### Text
+Strategy Our mission is to achieve sustainable revenue and earnings growth through providing superior solutions to our customers. 
+Our strategy to achieve this has been and will continue to be built on the following pillars: ? Expand Client Relationships — The overall market we serve continues to gravitate beyond single-product purchases to multi-solution partnerships. As the market dynamics shift, we expect our clients to rely more on our multidimensional service offerings.
+
+### Question
+what is the growth rate in the consolidated revenues from 2011 to 2012?
+
+### Response
+#### Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. 
+From the description of the question, it can be extracted from the table description that the Total Consolidated Revenue for 2011 and 2012 are $5,807.6 and $5,625.6, respectively. So the evidence is '$5,807.6 ## $5,625.6'. For this example, the question type is 'arithmetic'. To calculate the growth difference of the Total Consolidated Revenue from 2011 to 2012, formula '(5807.6 - 5625.6)' should be used. So in order to calculate the Total Consolidated Revenue from 2011 to 2012, equation '(5807.6 - 5625.6) / 5625.6' can be used to calculate the final answer. If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+#### Final Answer
+The equation is: <Prog>(5807.6 - 5625.6) / 5625.6</Prog>, and the answer is: <Ans>0.03235</Ans>
+## End of Example
+
+This is the end of the example section, and the following is the real scenario and related question -->
+
+### Table Description
+{table}
+
+### Text
+{text}
+
+### Question
+{question}
+
+### Response
+
+
+| step | output |
+| 1 | {gold_question_type} |
+| 2 | {gold_evidence} |
+| 3 | {gold_program} |
+| 4 | {gold_answer} |
+The equation is: <Prog>{gold_program}</Prog>, and the answer is: <Ans>{gold_answer}</Ans>

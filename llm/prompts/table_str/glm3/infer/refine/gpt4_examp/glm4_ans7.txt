@@ -1,0 +1,21 @@
+Steps
+Step 1: Predict the type of question being asked. This question requires comparing the increase rate of Total Revenues in two different years based on the General and Administrative Expenses. Thus, the current question type is 'arithmetic'.
+
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts.
+From the table descriptions, it can be extracted that the General and Administrative Expenses for 2015 and 2014 are $180 million and $212 million, respectively. The Total Revenues for 2015 and 2014 are $3 billion and $4 billion, respectively.
+
+Step 3: Calculate the increasing rate of Total Revenues in the year with the largest General and Administrative Expenses. The increase rate is calculated using the formula:
+Increase Rate = ((New Value - Old Value) / Old Value) * 100%
+
+For the year 2014, the increase rate is:
+((3 - 4) / 4) * 100% = (-1 / 4) * 100% = -25%
+
+For the year 2015, the increase rate is:
+((3 - 4) / 4) * 100% = (-1 / 4) * 100% = -25%
+
+Since the increase rates for both years are the same, the year with the largest amount of General and Administrative Expenses also has the largest increase rate of Total Revenues.
+
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-25%</Ans>.
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-0.25</Ans>

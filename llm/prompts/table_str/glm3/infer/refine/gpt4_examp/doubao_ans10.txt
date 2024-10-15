@@ -1,0 +1,9 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the table description and text, we can find that the fair market value of plan assets for our defined benefit pension plans as of the end of fiscal year 2014 is $4,114.6 and in 2015 it decreased to $3,916.4. So the evidence is "$4,114.6 - $3,916.4". For this example, the question type is 'arithmetic'. To calculate the decrease, the equation is "4114.6 - 3916.4". If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+Final Answer
+The equation is: <Prog>4114.6 - 3916.4</Prog>, and the answer is: <Ans>$198.2</Ans>.
+
+
+The equation is: <Prog>(3916.4 - 4114.6) / 4114.6</Prog>, and the answer is: <Ans>-0.04817</Ans>

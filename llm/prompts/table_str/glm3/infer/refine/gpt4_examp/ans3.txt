@@ -1,0 +1,15 @@
+Steps
+Step 1: The type of question being asked is 'arithmetic' because it requires adding numerical values to compute the total revenue.
+
+Step 2: Extract relevant numerical values from the table descriptions:
+
+Net interest revenue of 2009 is $5,651 (in million).
+Non-interest revenue of 2009 is $4,138 (in million).
+Step 3: Add the two values to compute the total revenue:
+Net interest revenue + Non-interest revenue = 5,651 + 4,138 = 9,789 (in million).
+
+Final Answer
+The total amount of Net interest revenue and Non-interest revenue in 2009 is: <Ans>$9,789 million</Ans>.
+
+
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789.0</Ans>

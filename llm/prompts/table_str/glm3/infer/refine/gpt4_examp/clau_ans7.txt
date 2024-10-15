@@ -1,0 +1,26 @@
+To answer this question, I'll follow these steps:
+
+Identify the year with the largest General and administrative expense
+Find the Total revenues for that year and the previous year
+Calculate the increasing rate of Total revenues
+Step 1: Identifying the year with largest General and administrative expense
+From the table description:
+2015: 180 million
+2014: 212 million
+
+The year with the largest General and administrative expense is 2014 with 212 million.
+
+Step 2: Finding Total revenues for 2014 and 2013
+From the table description for 2014:
+Total revenues of Years Ended December 31, 2014 (in millions) is 4.
+
+Unfortunately, we don't have the Total revenues for 2013 in the given information. Without this data, we cannot calculate the increasing rate.
+
+Step 3: Calculating the increasing rate
+Since we're missing the necessary data to calculate the increasing rate, we cannot provide a numerical answer.
+
+Final Answer:
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>Cannot be determined due to insufficient data. The year with the largest General and administrative expense is 2014, but we lack the Total revenues data for 2013 to calculate the increasing rate.</Ans>
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-0.25</Ans>

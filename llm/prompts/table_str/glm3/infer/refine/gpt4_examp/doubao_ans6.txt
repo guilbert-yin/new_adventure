@@ -1,0 +1,9 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is'span_selection'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the table description, we can see that "Table 2 shows Benefit obligation at year end of Pension Benefits 2002 is $106,224" and "Table 2 shows Benefit obligation at year end of Pension Benefits 2001 is $89,587". So the evidence is "2002 ## $106,224; 2001 ## $89,587".
+Step 3: Since the question type is'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2.
+Final Answer
+The amount of Benefit obligation at year end for Pension Benefits is larger in 2002.
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>

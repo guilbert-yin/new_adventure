@@ -5,7 +5,9 @@ Please organize the results in the following table:
 | 2 | {evidence} |
 | 3 | {program} |
 | 4 | {answer} |
-Finally, it is necessary to strictly generate the program and the final answer in the following template: "The program is: <Prog>{program}</Prog>, and the answer is: <Ans>{answer}</Ans>". A complete example is as follows: "The program is: <Prog>add(1,2), subtract(#0,3)</Prog>, and the answer is: <Ans>0</Ans>".
+Finally, it is necessary to strictly generate response containing the program and the final answer in the following template: 'The program is: <Prog>{program}</Prog>, and the answer is: <Ans>{answer}</Ans>'. If the '{question_type}' is 'arithmetic', the response example is as follows: 'The program is: <Prog>{program}</Prog>, and the answer is: <Ans>{answer}</Ans>'. If the '{question_type}' is 'span_selection', the response example is as follows: 'The answer is: <Ans>{answer}</Ans>'.
+
+The following is the real scenario and related question:
 
 ### Table Description
 {table}

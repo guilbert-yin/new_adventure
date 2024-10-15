@@ -1,0 +1,41 @@
+Steps
+Step 1: Identify the type of question. This is an 'arithmetic' question as it requires a calculation of market capitalization.
+
+Step 2: Extract the relevant data for the calculation. Market capitalization is calculated using the formula:
+
+Market Cap
+=
+Share Price
+×
+Number of Outstanding Shares
+Market Cap=Share Price×Number of Outstanding Shares
+From the table description, we have:
+
+Closing stock price on February 19, 2016: $87.32
+Number of outstanding shares on February 19, 2016: 423,897,556
+Step 3: Use the equation to calculate the market capitalization.
+
+Market Cap
+=
+87.32
+×
+423
+,
+897
+,
+556
+=
+36
+,
+998
+,
+872
+,
+599.92
+Market Cap=87.32×423,897,556=36,998,872,599.92
+Final Answer
+The equation is: <Prog>87.32 \times 423,897,556</Prog>, and the answer is: <Ans>$36,998,872,599.92</Ans>.
+
+
+
+The equation is: <Prog>423897556 * 87.32</Prog>, and the answer is: <Ans>37014734589.92</Ans>

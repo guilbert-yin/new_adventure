@@ -1,0 +1,11 @@
+Steps
+Step 1: Predict the type of question being asked. Based on all the provided information including table description, text, and the question, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts.
+From the description of the question, it can be extracted from the table description that the closing price of the common stock on February 19, 2016, was $87.32 per share, and the number of outstanding shares was 423,897,556. So the evidence is '$87.32 ## 423,897,556'. To calculate the market capitalization, the formula 'Closing Price per Share * Number of Outstanding Shares' should be used. Therefore, the equation is '87.32 * 423,897,556'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+
+Final Answer
+The equation is: <Prog>87.32 * 423,897,556</Prog>, and the answer is: <Ans>37,105,447,827.52</Ans>
+
+
+The equation is: <Prog>423897556 * 87.32</Prog>, and the answer is: <Ans>37014734589.92</Ans>

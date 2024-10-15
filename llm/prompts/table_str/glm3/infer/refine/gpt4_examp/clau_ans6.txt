@@ -1,0 +1,13 @@
+Steps
+Identify the relevant data:
+Benefit obligation at year end of Pension Benefits 2002: $106,224
+Benefit obligation at year end of Pension Benefits 2001: $89,587
+Compare the two values:
+$106,224 (2002) > $89,587 (2001)
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>.
+
+The Benefit obligation at year end for Pension Benefits is larger in 2002 ($106,224) compared to 2001 ($89,587).
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>

@@ -1,0 +1,10 @@
+Steps
+Step 1: Identify the type of question. The question is asking to compare the amount of Benefit obligation at year end for Pension Benefits between two years, which indicates a 'span_selection' type of question.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description, we can see that the Benefit obligation at year end of Pension Benefits for 2002 is $106,224 and for 2001 is $89,587.
+Step 3: Compare the two values to determine which year has a larger amount.
+
+Final Answer
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>, as the Benefit obligation at year end for Pension Benefits is larger in 2002 compared to 2001. 
+
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>2002</Ans>

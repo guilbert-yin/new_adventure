@@ -1,0 +1,8 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the table description, we can see that "Table 2 shows General and administrative expense Expenses of Years Ended December 31, 2014 (in millions) is 212" and "Table 2 shows General and administrative expense Expenses of Years Ended December 31, 2015 (in millions) is 180", so the year with the largest amount of General and administrative expense is 2014. Also, "Table 2 shows Total revenues of Years Ended December 31, 2014 (in millions) is 4" and "Table 2 shows Total revenues of Years Ended December 31, Change is -25". So the evidence is "2014 ## General and administrative expense: 212; Total revenues in 2014: 4; Total revenues change: -25". For this example, the question type is 'arithmetic'. To calculate the increasing rate of Total revenues in 2014, we need to find the total revenues change and divide it by the total revenues of the previous year. So the equation is "(-25/4)*100". If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+Final Answer
+The equation is: <Prog>(-25/4)*100</Prog>, and the answer is: <Ans>-625%</Ans>.
+
+The equation is: <Prog>N.A.</Prog>, and the answer is: <Ans>-0.25</Ans>

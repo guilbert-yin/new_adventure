@@ -1,0 +1,19 @@
+Steps
+Step 1: Predict the type of question being asked.
+The question is asking for the sum of two specific financial metrics for the year 2009. This is an 'arithmetic' type question.
+
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts.
+From the table descriptions:
+
+Net interest revenue of 2009 is $5,651 million.
+Non-interest revenue of 2009 is $4,138 million.
+So the evidence is '$5,651 ## $4,138'. To calculate the total amount of Net interest revenue and Non-interest revenue in 2009, the formula '(5651 + 4138)' should be used.
+
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer.
+Finally, it is necessary to strictly generate a response containing the equation and the answer in the following template: 'The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>'.
+
+Final Answer
+The equation is: <Prog>(5651 + 4138)</Prog>, and the answer is: <Ans>9789</Ans>
+
+
+The equation is: <Prog>5651 + 4138</Prog>, and the answer is: <Ans>9789.0</Ans>

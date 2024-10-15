@@ -1,0 +1,9 @@
+Steps
+Step 1: Predict the type of question being asked. There are two types of question:'span_selection', or 'arithmetic'. Based on all the provided information including table description, text and questions, the current question type is 'arithmetic'.
+Step 2: Extract the relevant strings or numerical values from the provided table descriptions or texts. From the description of the question, it can be extracted that we need to find the year with the most other revenues and then determine the growth rate of General and administrative expense for that year. Looking at the table description, we can see that other revenues in 2013 is 6 million and in 2014 is 9 million. So the year with the most other revenues is 2014. General and administrative expense in 2013 is 210 million and in 2014 is 212 million. So the evidence is '210 ## 212'. For this example, the question type is 'arithmetic'. To calculate the growth rate of General and administrative expense, formula '(212 - 210) / 210' should be used. So in order to calculate the growth rate of General and administrative expense in the year with the most other revenues (2014), equation '(212 - 210) / 210' can be used to calculate the final answer. If the question type is 'span_selection', set the equation to 'N.A.'.
+Step 3: If the question type is 'span_selection', the final answer can be directly extracted from the evidence obtained in Step 2. If the question type is 'arithmetic', then the equation obtained from step 2 needs to be numerically calculated to obtain the answer. Finally, it is necessary to strictly generate response containing the equation and the answer in the following template: 'The equation is: <Prog>{equation}</Prog>, and the answer is: <Ans>{answer}</Ans>'.
+Final Answer
+The equation is: <Prog>(212 - 210) / 210</Prog>, and the answer is: <Ans>0.00952</Ans>
+
+
+The equation is: <Prog>((-12 / 33) + 1) * 21</Prog>, and the answer is: <Ans>13.36364</Ans>
