@@ -8,19 +8,19 @@ LORA_RANK=8
 LORA_ALPHA=32
 LORA_DROUPOUT=0.1
 
-MAX_SOURCE_LEN=4096
-MAX_TARGET_LEN=400
-DEV_BATCH_SIZE=4
-GRAD_ACCUMULARION_STEPS=1
-MAX_STEP=200
+#MAX_SOURCE_LEN=4096
+MAX_TARGET_LEN=512
+DEV_BATCH_SIZE=2
+GRAD_ACCUMULARION_STEPS=32
+MAX_STEP=200000
 SAVE_INTERVAL=10
-MAX_SEQ_LEN=4608
+MAX_SEQ_LEN=4096
 
 RUN_NAME=text
 BASE_MODEL_PATH=/root/autodl-fs/models/chatglm3-6b-base
 DATASET_PATH=/root/autodl-tmp/new_adventure/mht_dataset_table_str_prompt_glm3format_train_evi_num_top30.jsonl
 DATESTR=`date +%Y%m%d-%H%M%S`
-OUTPUT_DIR=train_output/${RUN_NAME}-${DATESTR}-${LR}
+OUTPUT_DIR=/root/autodl-tmp/new_adventure/train_output/${RUN_NAME}-${DATESTR}-${LR}
 MASTER_PORT=$(shuf -n 1 -i 10000-65535)
 
 mkdir -p $OUTPUT_DIR
